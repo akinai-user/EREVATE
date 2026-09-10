@@ -5,8 +5,6 @@
   --color-text: #1c2733;
   --color-background: #fff;
   --color-primary: #175393;
-  --color-border: #dce2e8;
-  --color-surface: #f4f7fa;
   --content-width: 1120px;
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -16,18 +14,12 @@ button, input, select, textarea { font: inherit; }
 a { color: var(--color-primary); text-underline-offset: .2em; }
 :focus-visible { outline: 3px solid var(--color-primary); outline-offset: 4px; }
 .container { width: min(var(--content-width), calc(100% - 40px)); margin-inline: auto; }
-.site-header { border-bottom: 1px solid var(--color-border); }
-.header-inner, .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 24px; flex-wrap: wrap; }
-.site-logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; }
-.nav-list { display: flex; flex-wrap: wrap; gap: 12px 24px; padding: 0; margin: 0; list-style: none; }
 .page-main { min-height: 60vh; padding-block: 48px 80px; }
 h1 { margin: 0 0 32px; font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1.4; }
 h2 { line-height: 1.5; }
-.site-footer { background: var(--color-surface); border-top: 1px solid var(--color-border); }
 .skip-link { position: absolute; top: 8px; left: 8px; transform: translateY(-200%); padding: 8px 16px; background: #fff; z-index: 10; }
 .skip-link:focus { transform: translateY(0); }
 @media (max-width: 767px) {
-  .header-inner, .footer-inner { align-items: flex-start; flex-direction: column; gap: 16px; }
   .page-main { padding-block: 32px 56px; }
 }
 
@@ -93,7 +85,6 @@ a.hover-underline[href]:focus-visible,
 }
 
 /* レイアウトの高さを保ちながら画面上部に固定 */
-.site-header,
 .top-header {
   position: sticky;
   top: 0;
@@ -101,7 +92,6 @@ a.hover-underline[href]:focus-visible,
   background-color: #fff;
   transition: box-shadow 0.3s ease;
 }
-.site-header.is-scrolled,
 .top-header.is-scrolled {
   box-shadow: 0 4px 24px rgb(8 6 53 / 10%);
 }
@@ -115,37 +105,8 @@ html { scroll-padding-top: calc(var(--sticky-header-height, 80px) + 20px); }
 .hover-lift:focus-visible { transform: translateY(-4px); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto !important; }
-  .hover-lift, .site-header, .top-header { transition: none; }
+  .hover-lift, .top-header { transition: none; }
   .hover-lift:hover, .hover-lift:focus-visible { transform: none; }
-}
-
-/* 淡い装飾背景。背景だけを薄くし、文字やカードの濃さは保つ。 */
-.section-art {
-  position: relative;
-  isolation: isolate;
-  background-color: #fff;
-  --section-art-opacity: 0.65;
-  --section-art-position: 20% 35%;
-}
-.section-art::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background: url("../../images/common/section-background.png") var(--section-art-position) / cover no-repeat;
-  opacity: var(--section-art-opacity);
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 80%, transparent);
-  mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 80%, transparent);
-}
-.section-art--reverse {
-  --section-art-position: 80% 65%;
-  --section-art-opacity: 0.55;
-}
-.section-art--reverse::before { transform: scaleX(-1); }
-@media (max-width: 767px) {
-  .section-art { --section-art-opacity: 0.45; --section-art-position: 15% center; }
-  .section-art--reverse { --section-art-position: 85% center; }
 }
 
 /* ページ全体で一枚の背景を共有。スクロール中も模様が途切れません。 */

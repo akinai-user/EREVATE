@@ -6,12 +6,12 @@
 
 ご指定の「commn」に統一しています（「common」表記のディレクトリは作成していません）。
 
-- `commn/css/common.css`：リセット、色・幅の変数、共通ヘッダー／フッター、レスポンシブ対応。
-- `commn/js/common.js`：共通処理（フッターの年を更新）。
+- `commn/css/common.css`：リセット、基本レイアウト、共通ホバー、装飾背景。
+- `commn/css/site-shell.css`：全ページ共通のヘッダー／フッター、パンくずリスト、スマートフォンメニュー。
+- `commn/js/common.js`：共通処理（年表示、固定ヘッダー、スクロール演出）。
 - `commn/template.html`：新規ページ用HTMLテンプレート。
-- `commn/template.css` / `commn/template.js`：新規ページ用CSS・JSテンプレート。
 
-各HTMLに日本語設定・文字コード・viewport・タイトル・description・共通ヘッダー／フッター・本文領域・CSS／JS読み込みを配置しています。ヘッダー／フッターはHTML内に直接配置しているため、変更時は各ページとテンプレートに反映してください。
+各HTMLに日本語設定・文字コード・viewport・タイトル・description・共通ヘッダー／フッター・本文領域を配置しています。ページ固有の処理がない下層ページは、空のCSS／JavaScriptを読み込みません。ヘッダー／フッターのスタイルとスマートフォンメニュー処理は共通ファイルで管理します。HTML構造を変更する場合は各ページとテンプレートに反映してください。
 
 ## URL・ファイル一覧
 
@@ -39,9 +39,9 @@
 
 ## ディレクトリと命名
 
-各ページのディレクトリに `index.html`、`css/style.css`、`js/script.js` を配置しています。TOP専用ファイルはルート直下の `css/style.css` と `js/script.js` です。
+各ページのディレクトリに `index.html` を配置しています。ページ固有のスタイルや処理が必要になった時点でCSS／JavaScriptを追加してください。TOP専用ファイルはルート直下の `css/style.css` と `js/script.js` です。
 
-AI-LINKのみ添付のURLを優先し、`service/engineering/ai-link-merged.html`、`service/engineering/css/ai-link-merged.css`、`service/engineering/js/ai-link-merged.js` としています。
+AI-LINKのみ添付のURLを優先し、`service/engineering/ai-link-merged.html` としています。
 
 前払い申請・交通費申請・LPはサイトマップのURLどおりルート直下です。メニュー上の親子関係とURLのディレクトリ階層は必ずしも一致しません。
 
@@ -61,9 +61,9 @@ python3 -m http.server 8000
 
 1. 本文を各HTMLの `<main>` 内に追加し、タイトルとdescriptionを更新します。
 2. 全ページ共通のデザインは `commn/css/common.css`、個別のデザインは各ページのCSSに記述します。
-3. 共通処理は `commn/js/common.js`、個別の処理は各ページのJSに記述します。
-4. ページ追加時は `commn/template.html` をコピーし、CSS・JSテンプレートもページ用ディレクトリにコピーします。
-5. テンプレートの相対パス（共通CSS・JS、ナビゲーション、個別CSS・JS）を階層に合わせて修正します。
+3. 共通処理は `commn/js/common.js`、個別の処理が必要な場合だけページ用JSを追加します。
+4. ページ追加時は `commn/template.html` をコピーします。
+5. テンプレートの相対パス（共通CSS・JS、ナビゲーション）を階層に合わせて修正します。
 
 フォームページも現時点では初期HTMLのみです。公開前に各ページの内容、正式な会社情報、入力項目・バリデーション・送信先を実装してください。
 
@@ -118,9 +118,6 @@ Canvasの文字ピクセルを粒子の座標に変換しています。文言�
 SKIP・Escで終了できます。動きを減らす設定では省略し、JavaScript無効時も本文を表示します。描画エラーや8秒経過時にも終了します。
 
 ## セクションの装飾背景
-
-`section-art` を付けると共通の淡い背景を表示します。`section-art--reverse` を追加すると左右反転と表示位置・濃度を変更できます。TOPではサービスと社員インタビューに使用し、NEWSとお仕事紹介は白背景です。
-画像は `images/common/section-background.png`、スタイルは `commn/css/common.css` で管理します。上下を白へなじませ、スマートフォンではさらに薄く表示します。濃度は `--section-art-opacity` で調整できます。
 
 TOPの背景は現在、bodyの `page-art` クラスでページ全体に固定配置しています。各セクションの `section-art` は外し、共通の一枚を見せています。濃度は `--page-art-opacity`（PC: 0.65、スマートフォン: 0.45）で変更できます。FVのメインビジュアル・ヘッダー・フッターは既存の背景を重ねて表示します。
 
