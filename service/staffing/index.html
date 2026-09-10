@@ -7,6 +7,8 @@
   <meta name="description" content="ELEVATEの総合人材派遣サービスページです。">
   <link rel="stylesheet" href="../../commn/css/common.css">
   <link rel="stylesheet" href="../../commn/css/site-shell.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="../../commn/js/common.js" defer></script>
 </head>
 <body>
@@ -45,9 +47,90 @@
       <li class="breadcrumb__item"><span aria-current="page">総合人材派遣サービス</span></li>
     </ol>
   </nav>
-  <main id="main" class="container page-main">
-    <h1>総合人材派遣サービス</h1>
-    <!-- TODO: このページ固有のコンテンツを実装してください。 -->
+  <main id="main" class="service-page staffing-page">
+    <section class="dx-hero staffing-hero" aria-labelledby="staffing-title">
+      <span class="dx-orb dx-orb--01" aria-hidden="true"></span>
+      <span class="dx-orb dx-orb--02" aria-hidden="true"></span>
+      <span class="dx-orb dx-orb--03" aria-hidden="true"></span>
+      <span class="dx-orb dx-orb--04" aria-hidden="true"></span>
+      <div class="dx-hero__inner" data-reveal>
+        <p class="dx-eyebrow">SERVICE 01</p>
+        <h1 id="staffing-title">総合人材派遣サービス</h1>
+        <p class="dx-hero__catch">必要な時に、<span>必要な人材を。</span></p>
+        <p class="dx-hero__description">多様な業種・職種に対応し、即戦力となる人材を柔軟かつスピーディーに派遣するサービスです。<br>企業様の事業展開に応じて必要な時に必要な人材を必要な期間にご提供いたします。</p>
+        <a class="dx-hero__button hover-fade" href="../../contact/index.html">企業のご担当者様へ <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <div class="staffing-content">
+      <section class="staffing-section" aria-labelledby="features-title">
+        <div class="staffing-heading" data-reveal>
+          <p class="dx-eyebrow">FEATURES</p>
+          <h2 id="features-title">サービスの特徴</h2>
+          <p>企業の事業展開に応じて必要な時に必要な人数を必要な期間に</p>
+        </div>
+        <ol class="staffing-features">
+          <li class="staffing-feature" data-reveal>
+            <span class="staffing-feature__number" aria-hidden="true">01</span>
+            <h3>スタッフを教育後に派遣</h3>
+            <p>貴社への派遣前に、教育研修をスタッフに施します。依頼業務に必要なスキルも可能な限り取り揃えたうえで派遣いたします。</p>
+          </li>
+          <li class="staffing-feature" data-reveal>
+            <span class="staffing-feature__number" aria-hidden="true">02</span>
+            <h3>企業様へのアンケート</h3>
+            <p>年に一度、お客様よりスタッフに対するアンケートをいただき、スタッフと個人面談を行い、教育やモチベーションアップに繋げています。</p>
+          </li>
+          <li class="staffing-feature" data-reveal>
+            <span class="staffing-feature__number" aria-hidden="true">03</span>
+            <h3>社内の定期的な勉強会</h3>
+            <p>月に1回程度、様々な勉強会を行っています。コーディネーター・ディレクター勉強会、スタッフの教育訓練、YouTubeによる教育動画など。</p>
+          </li>
+          <li class="staffing-feature" data-reveal>
+            <span class="staffing-feature__number" aria-hidden="true">04</span>
+            <h3>急なご依頼にも対応</h3>
+            <p>1日の短期から長期的なご依頼や、1名から多数まで幅広いニーズにお応えいたします。</p>
+          </li>
+          <li class="staffing-feature" data-reveal>
+            <span class="staffing-feature__number" aria-hidden="true">05</span>
+            <h3>欠員保証あり対策万全</h3>
+            <p>欠員時、弊社社員が現場作業を行い対応いたします。また、当日のワンコール確認や送迎の点呼により、欠員対策も行っています。</p>
+          </li>
+          <li class="staffing-feature" data-reveal>
+            <span class="staffing-feature__number" aria-hidden="true">06</span>
+            <h3>スタッフの送迎あり</h3>
+            <p>公共交通機関がなくてもスタッフを送迎いたします。通行手段がないスタッフにも送迎を行うことで、幅広い中からマッチした人選が可能です。</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="staffing-section staffing-business" aria-labelledby="business-title">
+        <div class="staffing-heading" data-reveal>
+          <p class="dx-eyebrow">BUSINESS TYPES</p>
+          <h2 id="business-title">エレベートの業務形態について</h2>
+          <p>当社では「人材派遣」「業務請負」「人材紹介」の3つのサービス形態をご用意します。<br>企業の課題やニーズに合わせて、最適な人材活用の方法を柔軟に選択いただくことが可能です。</p>
+        </div>
+        <div class="staffing-business__grid">
+          <a class="staffing-business-card hover-trigger hover-lift" href="staffing-agency/index.html" data-reveal>
+            <h3>人材派遣</h3>
+            <p>必要な時期・期間に即戦力となる人材を派遣。企業の業務量に応じた柔軟な人材活用が可能です。</p>
+            <span class="staffing-business-card__link"><span class="hover-underline">詳しく見る</span><span aria-hidden="true">→</span></span>
+            <span class="staffing-business-card__arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="staffing-business-card hover-trigger hover-lift" href="contract-work/index.html" data-reveal>
+            <h3>業務請負</h3>
+            <p>業務の一部または全体を当社が請け負い、効率的な運用と品質向上をトータルで支援します。</p>
+            <span class="staffing-business-card__link"><span class="hover-underline">詳しく見る</span><span aria-hidden="true">→</span></span>
+            <span class="staffing-business-card__arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="staffing-business-card hover-trigger hover-lift" href="recruitment-agency/index.html" data-reveal>
+            <h3>人材紹介</h3>
+            <p>企業の採用要件にマッチする人材を紹介。採用後は直接雇用となり、長期的な人材確保が可能です。</p>
+            <span class="staffing-business-card__link"><span class="hover-underline">詳しく見る</span><span aria-hidden="true">→</span></span>
+            <span class="staffing-business-card__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+    </div>
   </main>
   <footer class="top-footer">
     <div class="top-footer__inner">
