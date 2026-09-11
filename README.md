@@ -74,7 +74,7 @@ python3 -m http.server 8000
 ```html
 <!-- 画像だけを0.3秒で少し薄くする（子孫のimgが対象） -->
 <a class="hover-image" href="service/index.html">
-  <img src="images/top/service-card-01.png" alt="サービス内容">
+  <img src="images/top/service-card-01.webp" alt="サービス内容">
 </a>
 
 <!-- テキストの下線を0.3秒で左から伸ばす -->
@@ -121,9 +121,9 @@ SKIP・Escで終了できます。動きを減らす設定では省略し、Java
 
 TOPの背景は現在、bodyの `page-art` クラスでページ全体に固定配置しています。各セクションの `section-art` は外し、共通の一枚を見せています。濃度は `--page-art-opacity`（PC: 0.65、スマートフォン: 0.45）で変更できます。FVのメインビジュアル・ヘッダー・フッターは既存の背景を重ねて表示します。
 
-SP（767px以下）のページ共通背景は `images/common/section-background-sp.png` に切り替わります。
+SP（767px以下）のページ共通背景は `images/common/section-background-sp.webp` に切り替わります。
 
-HERO内のサイズは `--hero-unit` で画面幅に比例します。PCは1366px・SPは375pxを基準とし、高さ・文字・ボタン・余白を同じ比率で変更します。SPは縦並びと画像の縦横比から高さが決まります。
+HERO内の高さ・文字・ボタン・余白は `clamp()` で下限と上限を持たせています。中間幅で過度に縮小したり、幅広のスマートフォンで過大になったりしない設定です。SPは縦並びと画像の縦横比から高さが決まります。
 
 ## SPメニュー
 
@@ -131,6 +131,12 @@ HERO内のサイズは `--hero-unit` で画面幅に比例します。PCは1366p
 
 ホバー演出は768px以上かつマウス等でホバー可能な端末に限定しています。SPではメニュー開閉・登場演出とキーボードのフォーカス表示を維持します。
 
+## サービスサブメニュー
+
+768px以上でヘッダーの「サービス内容」をホバーまたはキーボードフォーカスすると、総合人材派遣サービスとシステムエンジニアリングサービスへのリンクを表示します。項目は `commn/js/common.js` の `services` で、表示は `commn/css/site-shell.css` で共通管理しています。
+
 ## 浮遊する背景画像
 
-TOPの `.floating-background` 内に6枚の装飾画像を配置しています。`commn/css/common.css` の各 `nth-child` で位置・サイズ・濃度・移動距離・周期を変更できます。17〜26秒の異なる周期で緩やかに浮遊します。SPは小さく薄くし、動きを減らす設定では静止します。メニュー・モーダル・ローディング中は一時停止します。画像は `images/common/floating-orb-01.png` 〜 `06.png` です。
+TOPの `.floating-background` 内に6枚の装飾画像を配置しています。`commn/css/common.css` の各 `nth-child` で位置・サイズ・濃度・移動距離・周期を変更できます。17〜26秒の異なる周期で緩やかに浮遊します。SPは小さく薄くし、動きを減らす設定では静止します。メニュー・モーダル・ローディング中は一時停止します。表示用画像は `images/common/floating-orb-01.webp` 〜 `06.webp` です。
+
+TOPと共通背景は表示用にWebPを使用し、元のPNGは再編集用ソースとして残しています。

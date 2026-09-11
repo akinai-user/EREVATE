@@ -36,7 +36,7 @@ a {
   position: relative;
   min-height: clamp(520px, 41.95vw, 573px);
   overflow: hidden;
-  background-image: url("../images/top/hero-background.png");
+  background-image: url("../images/top/hero-background.webp");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -216,8 +216,11 @@ a {
   justify-content: space-between;
 }
 .news-list {
+  margin: 0;
+  padding: 0;
   border-top: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.66);
+  list-style: none;
 }
 .news-item {
   min-height: clamp(56px, 4.6vw, 63px);
@@ -429,7 +432,7 @@ a {
     height: auto;
     aspect-ratio: 900 / 825;
     margin-top: clamp(16px, 5.87vw, 22px);
-    background-image: url("../images/top/hero-background-sp.png");
+    background-image: url("../images/top/hero-background-sp.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -723,96 +726,4 @@ body.modal-open {
 /* NEWSを含む各セクションからページ共通背景を見せる */
 .page-art .section {
   background: transparent;
-}
-
-/* HERO内だけを画面幅に比例させる。PCは1366px、SPは375pxを基準にする。 */
-@media (min-width: 768px) {
-  .hero {
-    --hero-unit: calc(100vw / 1366);
-    min-height: calc(573 * var(--hero-unit));
-  }
-  .hero__inner {
-    width: calc(1180 * var(--hero-unit));
-    min-height: calc(573 * var(--hero-unit));
-    grid-template-rows: calc(573 * var(--hero-unit));
-  }
-  .hero__visual {
-    height: calc(573 * var(--hero-unit));
-  }
-  .hero__copy {
-    padding: calc(48 * var(--hero-unit)) 0 calc(50 * var(--hero-unit))
-      calc(16 * var(--hero-unit));
-  }
-  .hero__copy h1 {
-    font-size: calc(43 * var(--hero-unit));
-    margin-bottom: calc(22 * var(--hero-unit));
-  }
-  .hero .eyebrow {
-    font-size: calc(13 * var(--hero-unit));
-    margin-bottom: calc(8 * var(--hero-unit));
-  }
-  .hero__lead {
-    font-size: calc(14 * var(--hero-unit));
-  }
-  .hero__buttons {
-    left: calc(16 * var(--hero-unit));
-    bottom: calc(62 * var(--hero-unit));
-    gap: calc(16 * var(--hero-unit));
-  }
-  .hero .pill {
-    min-width: calc(215 * var(--hero-unit));
-    height: calc(53 * var(--hero-unit));
-    padding-inline: calc(26 * var(--hero-unit));
-    font-size: calc(14 * var(--hero-unit));
-    border-width: calc(2 * var(--hero-unit));
-    border-radius: calc(30 * var(--hero-unit));
-    box-shadow: 0 calc(8 * var(--hero-unit)) calc(24 * var(--hero-unit))
-      rgb(70 34 160 / 8%);
-  }
-  .hero .scroll-cue {
-    bottom: calc(35 * var(--hero-unit));
-    font-size: calc(10 * var(--hero-unit));
-  }
-  .hero .scroll-cue b {
-    width: calc(65 * var(--hero-unit));
-    height: calc(65 * var(--hero-unit));
-    margin-bottom: calc(4 * var(--hero-unit));
-  }
-}
-@media (max-width: 767px) {
-  .hero {
-    --hero-unit: calc(100vw / 375);
-    padding-bottom: calc(30 * var(--hero-unit));
-  }
-  .hero__copy {
-    padding: calc(34 * var(--hero-unit)) 5.33% 0;
-  }
-  .hero__copy h1 {
-    font-size: calc(30 * var(--hero-unit));
-    margin-top: calc(8 * var(--hero-unit));
-    margin-bottom: calc(16 * var(--hero-unit));
-  }
-  .hero .eyebrow {
-    font-size: calc(11 * var(--hero-unit));
-    margin-bottom: calc(6 * var(--hero-unit));
-  }
-  .hero__lead {
-    font-size: calc(12 * var(--hero-unit));
-  }
-  .hero__visual {
-    margin-top: calc(22 * var(--hero-unit));
-  }
-  .hero__buttons {
-    margin: calc(20 * var(--hero-unit)) 5.33% 0;
-    gap: calc(10 * var(--hero-unit));
-  }
-  .hero .pill {
-    height: calc(50 * var(--hero-unit));
-    padding-inline: calc(22 * var(--hero-unit));
-    font-size: calc(12 * var(--hero-unit));
-    border-width: calc(2 * var(--hero-unit));
-    border-radius: calc(30 * var(--hero-unit));
-    box-shadow: 0 calc(8 * var(--hero-unit)) calc(24 * var(--hero-unit))
-      rgb(70 34 160 / 8%);
-  }
 }

@@ -16,13 +16,13 @@
   background-repeat: no-repeat;
 }
 .staffing-content::before {
-  background-image: url("../../../images/common/floating-orb-01.png"), url("../../../images/common/floating-orb-03.png"), url("../../../images/common/floating-orb-02.png");
+  background-image: url("../../../images/common/floating-orb-01.webp"), url("../../../images/common/floating-orb-03.webp"), url("../../../images/common/floating-orb-02.webp");
   background-size: 160px, 88px, 180px;
   background-position: 8% 0%, 4% 50%, 88% 70%;
   opacity: 0.48;
 }
 .staffing-content::after {
-  background-image: url("../../../images/common/floating-orb-04.png"), url("../../../images/common/floating-orb-05.png");
+  background-image: url("../../../images/common/floating-orb-04.webp"), url("../../../images/common/floating-orb-05.webp");
   background-size: 155px, 100px;
   background-position: 96% 4%, 98% 90%;
   opacity: 0.42;

@@ -1,15 +1,5 @@
 @charset "UTF-8";
 
-:root {
-  --navy: #080635;
-  --purple: #5a20f0;
-  --violet: #8f62ff;
-  --line: #deddf4;
-  --page-gutter: clamp(24px, 3.5vw, 48px);
-  --page-width: min(1180px, calc(100% - var(--page-gutter) * 2));
-  --header-width: min(1230px, calc(100% - var(--page-gutter) * 2));
-}
-
 .top-header {
   height: clamp(64px, 5.7vw, 78px);
   background: rgb(255 255 255 / 96%);
@@ -49,6 +39,84 @@
 }
 .global-nav > a[aria-current="page"] {
   color: var(--purple);
+}
+.service-navigation {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.service-navigation > a[aria-current="page"] {
+  color: var(--purple);
+}
+.service-navigation::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -26px;
+  width: min(340px, calc(100vw - 32px));
+  height: 30px;
+  pointer-events: none;
+}
+.service-navigation.is-open::after {
+  pointer-events: auto;
+}
+.service-menu {
+  position: absolute;
+  z-index: 60;
+  top: calc(100% + 26px);
+  left: -26px;
+  width: min(340px, calc(100vw - 32px));
+  padding: 12px 24px;
+  border: 1px solid rgb(222 221 244 / 70%);
+  border-radius: 16px;
+  background: rgb(255 255 255 / 98%);
+  box-shadow: 0 14px 38px rgb(8 6 53 / 14%);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.2s;
+}
+.service-navigation.is-open .service-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.global-nav .service-menu__link {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+  white-space: normal;
+}
+.global-nav .service-menu__link + .service-menu__link {
+  border-top: 1px solid var(--line);
+}
+.service-menu__label {
+  flex: 1;
+}
+.service-menu__arrow {
+  flex: 0 0 auto;
+  color: var(--purple);
+  font-size: 24px;
+  line-height: 1;
+  transition: transform var(--hover-duration) ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .service-menu__link:hover .service-menu__arrow {
+    transform: translateX(4px);
+  }
+}
+.service-menu__link:focus-visible .service-menu__arrow {
+  transform: translateX(4px);
 }
 .header-actions {
   display: flex;
@@ -321,7 +389,7 @@
     color: var(--navy);
     background:
       linear-gradient(rgb(255 255 255 / 55%), rgb(255 255 255 / 55%)),
-      url("../../images/common/section-background-sp.png") center / cover no-repeat,
+      url("../../images/common/section-background-sp.webp") center / cover no-repeat,
       #fff;
     visibility: hidden;
     opacity: 0;
@@ -447,6 +515,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .service-menu,
+  .service-menu__arrow,
   .global-nav,
   .global-nav.is-open > a,
   .menu-button span {
