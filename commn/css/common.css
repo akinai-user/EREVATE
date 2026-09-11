@@ -6,6 +6,15 @@
   --color-background: #fff;
   --color-primary: #175393;
   --content-width: 1120px;
+  --navy: #080635;
+  --purple: #5a20f0;
+  --violet: #8f62ff;
+  --line: #deddf4;
+  --page-gutter: clamp(24px, 3.5vw, 48px);
+  --page-width: min(1180px, calc(100% - var(--page-gutter) * 2));
+  --header-width: min(1230px, calc(100% - var(--page-gutter) * 2));
+  --hover-duration: 0.3s;
+  --hover-image-opacity: 0.75;
 }
 *, *::before, *::after { box-sizing: border-box; }
 body { margin: 0; color: var(--color-text); background: var(--color-background); font-family: system-ui, -apple-system, "Noto Sans JP", sans-serif; font-size: 1rem; line-height: 1.8; overflow-wrap: anywhere; }
@@ -24,10 +33,6 @@ h2 { line-height: 1.5; }
 }
 
 /* 共通ホバー：画像リンクの親要素、またはimg自体に付与 */
-:root {
-  --hover-duration: 0.3s;
-  --hover-image-opacity: 0.75;
-}
 .hover-image img,
 img.hover-image {
   transition: opacity var(--hover-duration) ease;
@@ -121,13 +126,13 @@ html { scroll-padding-top: calc(var(--sticky-header-height, 80px) + 20px); }
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: url("../../images/common/section-background.png") center / cover no-repeat;
+  background: url("../../images/common/section-background.webp") center / cover no-repeat;
   opacity: var(--page-art-opacity);
 }
 @media (max-width: 767px) {
   .page-art { --page-art-opacity: 0.45; }
   .page-art::before {
-    background-image: url("../../images/common/section-background-sp.png");
+    background-image: url("../../images/common/section-background-sp.webp");
   }
 }
 

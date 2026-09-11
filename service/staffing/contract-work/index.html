@@ -7,6 +7,7 @@
   <meta name="description" content="ELEVATEの業務請負ページです。">
   <link rel="stylesheet" href="../../../commn/css/common.css">
   <link rel="stylesheet" href="../../../commn/css/site-shell.css">
+  <link rel="stylesheet" href="../staffing-agency/css/style.css">
   <script src="../../../commn/js/common.js" defer></script>
 </head>
 <body>
@@ -46,9 +47,104 @@
       <li class="breadcrumb__item"><span aria-current="page">業務請負</span></li>
     </ol>
   </nav>
-  <main id="main" class="container page-main">
-    <h1>業務請負</h1>
-    <!-- TODO: このページ固有のコンテンツを実装してください。 -->
+  <main id="main" class="dispatch-page">
+    <section class="dispatch-hero" aria-labelledby="contract-title">
+      <div data-reveal>
+        <p class="dispatch-hero__category">総合人材派遣サービス</p>
+        <h1 id="contract-title">業務請負</h1>
+        <p class="dispatch-hero__description">弊社の業務請負サービスは、貴社の業務を工程単位でお引き受けし、人材の配置から教育・労務管理・品質管理まで一貫して対応いたします。現場の特性に合わせた運営体制を構築し、業務効率と生産性の向上を継続的に支援します。</p>
+      </div>
+    </section>
+
+    <section class="dispatch-benefits" aria-labelledby="benefits-title">
+      <h2 class="dispatch-heading" id="benefits-title" data-reveal>業務請負のメリット</h2>
+      <ol class="dispatch-benefits__grid">
+        <li class="dispatch-benefit" data-reveal>
+          <span class="dispatch-number" aria-hidden="true">1</span>
+          <h3>コストの適正化</h3>
+          <p>業務に必要な人員の採用・教育・労務管理をまとめて委託することで、運営にかかるコストを明確にし、無駄を抑えられます。</p>
+        </li>
+        <li class="dispatch-benefit" data-reveal>
+          <span class="dispatch-number" aria-hidden="true">2</span>
+          <h3>業務効率の向上</h3>
+          <p>業務プロセスを整理し、現場に合った人員配置と運営方法を設計することで、スムーズな業務遂行を実現します。</p>
+        </li>
+        <li class="dispatch-benefit" data-reveal>
+          <span class="dispatch-number" aria-hidden="true">3</span>
+          <h3>品質の安定</h3>
+          <p>業務手順と管理基準を統一し、責任者が進捗と品質を管理することで、安定したサービスレベルを維持します。</p>
+        </li>
+        <li class="dispatch-benefit" data-reveal>
+          <span class="dispatch-number" aria-hidden="true">4</span>
+          <h3>採用・教育負担の軽減</h3>
+          <p>業務に必要な人材の採用から導入前教育まで弊社が担うため、貴社の採用担当者や現場責任者の負担を軽減できます。</p>
+        </li>
+        <li class="dispatch-benefit" data-reveal>
+          <span class="dispatch-number" aria-hidden="true">5</span>
+          <h3>柔軟な運営体制</h3>
+          <p>繁忙期・閑散期や業務量の変化に合わせ、人員構成や作業計画を見直すことで、変化に強い運営をサポートします。</p>
+        </li>
+        <li class="dispatch-benefit" data-reveal>
+          <span class="dispatch-number" aria-hidden="true">6</span>
+          <h3>コア業務への集中</h3>
+          <p>定型業務や周辺業務を切り出して委託することで、貴社の人材と経営資源をより付加価値の高い業務に集中できます。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="dispatch-flow" aria-labelledby="flow-title">
+      <h2 class="dispatch-heading" id="flow-title" data-reveal>業務請負の流れ</h2>
+      <div class="dispatch-flow__panel">
+        <ol class="dispatch-steps">
+          <li class="dispatch-step" data-reveal>
+            <span class="dispatch-number" aria-hidden="true">1</span>
+            <div>
+              <h3>ヒアリング</h3>
+              <p>対象業務の内容や作業量、運用体制、品質基準、導入時期などを詳しくお伺いします。現在抱えている課題と、請負化によって実現したい状態を整理します。</p>
+            </div>
+          </li>
+          <li class="dispatch-step" data-reveal>
+            <span class="dispatch-number" aria-hidden="true">2</span>
+            <div>
+              <h3>業務設計・お見積もり</h3>
+              <p>ヒアリング内容に基づき、業務範囲、作業手順、運営体制、管理方法を設計します。スケジュールとお見積もりを含む実施プランをご提案します。</p>
+            </div>
+          </li>
+          <li class="dispatch-step" data-reveal>
+            <span class="dispatch-number" aria-hidden="true">3</span>
+            <div>
+              <h3>運営体制の構築</h3>
+              <p>業務に必要な人材を選定し、現場責任者を中心とした運営体制を構築します。業務マニュアルや報告ルール、緊急時の連絡体制も合わせて整備します。</p>
+            </div>
+          </li>
+          <li class="dispatch-step" data-reveal>
+            <span class="dispatch-number" aria-hidden="true">4</span>
+            <div>
+              <h3>契約の締結</h3>
+              <p>対象業務の範囲、運営期間、成果物、品質基準、費用などをご確認いただき、業務請負契約を締結します。</p>
+            </div>
+          </li>
+          <li class="dispatch-step" data-reveal>
+            <span class="dispatch-number" aria-hidden="true">5</span>
+            <div>
+              <h3>導入準備・スタッフ教育</h3>
+              <p>業務開始前に、作業手順や安全・品質基準、現場のルールに関する教育を実施します。必要な資材やツールを整え、スムーズに立ち上げられる状態をつくります。</p>
+            </div>
+          </li>
+          <li class="dispatch-step" data-reveal>
+            <span class="dispatch-number" aria-hidden="true">6</span>
+            <div>
+              <h3>業務開始・継続改善</h3>
+              <p>責任者の管理のもとで業務を開始します。開始後も進捗や品質を定期的に確認し、貴社への報告と運営方法の見直しを重ねながら、安定稼働と生産性向上を支援します。</p>
+            </div>
+          </li>
+        </ol>
+        <div class="dispatch-contact">
+          <p>業務請負をお考えの企業のご担当者様は<br>お問い合わせください。</p>
+          <a class="dispatch-contact__button hover-fade" href="../../../contact/index.html">企業ご担当者様はこちら <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="top-footer">
     <div class="top-footer__inner">

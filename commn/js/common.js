@@ -34,6 +34,7 @@
     const navigation = document.querySelector("#global-nav");
     if (!button || !navigation) return;
 
+    const desktopMedia = window.matchMedia("(min-width: 768px)");
     const backgroundElements = document.querySelectorAll(
       "main, .top-footer, [data-back-to-top]",
     );
@@ -91,8 +92,106 @@
         first.focus();
       }
     });
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 767) close();
+    desktopMedia.addEventListener("change", (event) => {
+      if (event.matches) close();
+    });
+  };
+
+  const initServiceMenu = () => {
+    const navigation = document.querySelector("#global-nav");
+    const serviceLink = navigation?.querySelector(
+      ':scope > a[href$="service/index.html"]',
+    );
+    if (!navigation || !serviceLink) return;
+
+    const desktopMedia = window.matchMedia("(min-width: 768px)");
+    const services = [
+      {
+        label: "総合人材派遣サービス",
+        path: "staffing/index.html",
+      },
+      {
+        label: "システムエンジニアリングサービス",
+        path: "engineering/index.html",
+      },
+    ];
+    let wrapper;
+
+    const close = () => {
+      if (!wrapper) return;
+      wrapper.classList.remove("is-open");
+      serviceLink.setAttribute("aria-expanded", "false");
+    };
+    const open = () => {
+      if (!wrapper) return;
+      wrapper.classList.add("is-open");
+      serviceLink.setAttribute("aria-expanded", "true");
+    };
+    const build = () => {
+      if (wrapper || !desktopMedia.matches) return;
+
+      wrapper = document.createElement("div");
+      wrapper.className = "service-navigation";
+      serviceLink.before(wrapper);
+      wrapper.append(serviceLink);
+
+      const panel = document.createElement("div");
+      panel.className = "service-menu";
+      panel.id = "service-menu";
+      panel.setAttribute("role", "group");
+      panel.setAttribute("aria-label", "サービス内容のサブメニュー");
+
+      services.forEach(({ label, path }) => {
+        const link = document.createElement("a");
+        const text = document.createElement("span");
+        const arrow = document.createElement("span");
+
+        link.className = "service-menu__link hover-trigger";
+        link.href = new URL(path, serviceLink.href).href;
+        text.className = "service-menu__label hover-underline";
+        text.textContent = label;
+        arrow.className = "service-menu__arrow";
+        arrow.setAttribute("aria-hidden", "true");
+        arrow.textContent = "→";
+        link.append(text, arrow);
+        panel.append(link);
+      });
+
+      wrapper.append(panel);
+      serviceLink.setAttribute("aria-controls", panel.id);
+      serviceLink.setAttribute("aria-expanded", "false");
+
+      wrapper.addEventListener("pointerenter", (event) => {
+        if (event.pointerType !== "touch") open();
+      });
+      wrapper.addEventListener("pointerleave", close);
+      wrapper.addEventListener("focusin", open);
+      wrapper.addEventListener("focusout", () => {
+        requestAnimationFrame(() => {
+          if (wrapper && !wrapper.contains(document.activeElement)) close();
+        });
+      });
+      wrapper.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        event.preventDefault();
+        serviceLink.focus({ preventScroll: true });
+        close();
+      });
+    };
+    const destroy = () => {
+      if (!wrapper) return;
+      close();
+      serviceLink.removeAttribute("aria-controls");
+      serviceLink.removeAttribute("aria-expanded");
+      wrapper.before(serviceLink);
+      wrapper.remove();
+      wrapper = undefined;
+    };
+
+    build();
+    desktopMedia.addEventListener("change", () => {
+      if (desktopMedia.matches) build();
+      else destroy();
     });
   };
 
@@ -145,5 +244,6 @@
   updateCurrentYear();
   initStickyHeader();
   initMenu();
+  initServiceMenu();
   initRevealAnimations();
 })();

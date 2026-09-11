@@ -5,7 +5,7 @@
   overflow: hidden;
   background:
     linear-gradient(rgb(255 255 255 / 66%), rgb(255 255 255 / 66%)),
-    url("../../images/common/section-background.png") center top / cover fixed
+    url("../../images/common/section-background.webp") center top / cover fixed
       no-repeat,
     #fff;
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
@@ -29,7 +29,7 @@
     radial-gradient(ellipse at 4% 0%, rgb(143 98 255 / 15%), transparent 30%),
     radial-gradient(ellipse at 95% 15%, rgb(37 169 242 / 11%), transparent 32%),
     linear-gradient(135deg, rgb(255 255 255 / 90%), rgb(247 248 255 / 74%)),
-    url("../../images/common/section-background.png") center / cover no-repeat;
+    url("../../images/common/section-background.webp") center / cover no-repeat;
 }
 .dx-hero::before,
 .dx-hero::after {
@@ -345,7 +345,7 @@
   .service-page {
     background-image:
       linear-gradient(rgb(255 255 255 / 72%), rgb(255 255 255 / 72%)),
-      url("../../images/common/section-background-sp.png");
+      url("../../images/common/section-background-sp.webp");
     background-attachment: scroll;
   }
   .dx-hero {

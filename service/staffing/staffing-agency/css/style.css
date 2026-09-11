@@ -5,7 +5,7 @@
   overflow: hidden;
   color: var(--navy);
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  background: linear-gradient(rgb(255 255 255 / 45%), rgb(255 255 255 / 45%)), url("../../../../images/common/section-background.png") center / cover no-repeat, #fff;
+  background: linear-gradient(rgb(255 255 255 / 45%), rgb(255 255 255 / 45%)), url("../../../../images/common/section-background.webp") center / cover no-repeat, #fff;
 }
 .dispatch-page::before {
   content: "";
@@ -13,7 +13,7 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background-image: url("../../../../images/common/floating-orb-01.png"), url("../../../../images/common/floating-orb-03.png"), url("../../../../images/common/floating-orb-02.png"), url("../../../../images/common/floating-orb-04.png"), url("../../../../images/common/floating-orb-05.png"), url("../../../../images/common/floating-orb-06.png");
+  background-image: url("../../../../images/common/floating-orb-01.webp"), url("../../../../images/common/floating-orb-03.webp"), url("../../../../images/common/floating-orb-02.webp"), url("../../../../images/common/floating-orb-04.webp"), url("../../../../images/common/floating-orb-05.webp"), url("../../../../images/common/floating-orb-06.webp");
   background-size: 78px, 160px, 130px, 95px, 100px, 130px;
   background-position: 3% 3%, 88% 4%, 102% 16%, -2% 48%, 77% 53%, 101% 96%;
   background-repeat: no-repeat;
@@ -169,7 +169,7 @@
   gap: 28px;
   padding: 38px clamp(26px, 4.4vw, 58px);
   color: #fff;
-  background: linear-gradient(120deg, rgb(104 58 206 / 95%), rgb(64 38 161 / 95%)), url("../../../../images/common/section-background.png") center / cover;
+  background: linear-gradient(120deg, rgb(104 58 206 / 95%), rgb(64 38 161 / 95%)), url("../../../../images/common/section-background.webp") center / cover;
 }
 .dispatch-contact p {
   margin: 0;
@@ -214,7 +214,7 @@
 }
 @media (max-width: 767px) {
   .dispatch-page {
-    background-image: linear-gradient(rgb(255 255 255 / 50%), rgb(255 255 255 / 50%)), url("../../../../images/common/section-background-sp.png");
+    background-image: linear-gradient(rgb(255 255 255 / 50%), rgb(255 255 255 / 50%)), url("../../../../images/common/section-background-sp.webp");
   }
   .dispatch-page::before {
     opacity: 0.4;
