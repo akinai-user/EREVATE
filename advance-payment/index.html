@@ -7,6 +7,8 @@
   <meta name="description" content="ELEVATEの前払い申請フォームページです。">
   <link rel="stylesheet" href="../commn/css/common.css">
   <link rel="stylesheet" href="../commn/css/site-shell.css">
+  <link rel="stylesheet" href="../service/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="../commn/js/common.js" defer></script>
 </head>
 <body>
@@ -45,9 +47,111 @@
       <li class="breadcrumb__item"><span aria-current="page">前払い申請フォーム</span></li>
     </ol>
   </nav>
-  <main id="main" class="container page-main">
-    <h1>前払い申請フォーム</h1>
-    <!-- TODO: このページ固有のコンテンツを実装してください。 -->
+  <main id="main" class="service-page advance-page">
+    <section class="dx-hero advance-hero" aria-labelledby="advance-title">
+      <span class="dx-orb dx-orb--01" aria-hidden="true"></span>
+      <span class="dx-orb dx-orb--02" aria-hidden="true"></span>
+      <span class="dx-orb dx-orb--03" aria-hidden="true"></span>
+      <span class="dx-orb dx-orb--04" aria-hidden="true"></span>
+      <div class="dx-hero__inner" data-reveal>
+        <p class="dx-eyebrow">STAFF</p>
+        <p class="advance-hero__category">登録スタッフの方</p>
+        <h1 id="advance-title">前払い申請フォーム</h1>
+        <p class="advance-hero__description">給料の前払いをご希望の方は、専用フォームより必要事項を<br>ご入力のうえ、申請手続きを行ってください。<br>申請内容を確認後、順次対応させていただきます。</p>
+      </div>
+    </section>
+
+    <div class="advance-content">
+      <section class="advance-form-section" aria-labelledby="form-title">
+        <h2 class="visually-hidden" id="form-title">前払い申請内容の入力</h2>
+        <div class="advance-form-card" data-reveal>
+          <p class="advance-form__intro">給料の前払いをご希望の方は、専用フォームより必要事項をご入力のうえ、申請手続きを行ってください。<br>申請内容を確認後、順次対応させていただきます。</p>
+
+          <form class="advance-form" action="#" method="post" enctype="multipart/form-data">
+            <div class="advance-form__row">
+              <label class="advance-form__label" for="advance-name">氏名 <span class="required-label">必須</span></label>
+              <div class="advance-form__control">
+                <input id="advance-name" name="name" type="text" autocomplete="name" placeholder="例）山田太郎" required>
+              </div>
+            </div>
+
+            <div class="advance-form__row">
+              <label class="advance-form__label" for="advance-id">ID <span class="required-label">必須</span></label>
+              <div class="advance-form__control">
+                <input id="advance-id" name="staff_id" type="text" inputmode="numeric" autocomplete="off" placeholder="例）12345" required>
+                <p class="advance-form__help">※IDをお持ちでない方は、「00000」と入力してください。</p>
+              </div>
+            </div>
+
+            <div class="advance-form__row">
+              <label class="advance-form__label" for="advance-work-detail">日付・勤務先 <span class="required-label">必須</span></label>
+              <div class="advance-form__control">
+                <textarea id="advance-work-detail" name="work_detail" rows="5" placeholder="例）12月17日○○会社、12月18日△△会社" required></textarea>
+              </div>
+            </div>
+
+            <div class="advance-form__row">
+              <label class="advance-form__label" for="advance-days">何日分 <span class="required-label">必須</span></label>
+              <div class="advance-form__control advance-form__control--days">
+                <input id="advance-days" name="days" type="number" min="1" step="1" inputmode="numeric" required>
+                <span>日分</span>
+              </div>
+            </div>
+
+            <div class="advance-form__row">
+              <label class="advance-form__label" for="advance-email">メールアドレス <span class="required-label">必須</span></label>
+              <div class="advance-form__control">
+                <input id="advance-email" name="email" type="email" autocomplete="email" placeholder="例）example@example.com" required>
+              </div>
+            </div>
+
+            <div class="advance-form__row">
+              <div class="advance-form__label">勤務証明、<br>公共機関証明の添付</div>
+              <div class="advance-form__control advance-form__files">
+                <label class="file-control" for="advance-proof-01">
+                  <span>ファイルを選択</span>
+                  <input id="advance-proof-01" name="proof_files[]" type="file" accept=".jpg,.jpeg,.png,.pdf,.heic,image/jpeg,image/png,application/pdf,image/heic">
+                </label>
+                <label class="file-control" for="advance-proof-02">
+                  <span>ファイルを選択</span>
+                  <input id="advance-proof-02" name="proof_files[]" type="file" accept=".jpg,.jpeg,.png,.pdf,.heic,image/jpeg,image/png,application/pdf,image/heic">
+                </label>
+                <div class="advance-form__help">
+                  <p>※例）ICOCAなどの確認は、駅などでもらえる利用証明の画像を添付してください。</p>
+                  <p>※ファイル容量は、1ファイル5MBまででお願いします。</p>
+                  <p>※ファイル形式は、JPEG、PNG、PDF、HEICのいずれかでお願いします。</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="advance-form__row advance-form__fieldset" role="group" aria-labelledby="receipt-confirmation-label">
+              <div class="advance-form__label" id="receipt-confirmation-label">給与前払いの<br>受け取り方法の確認 <span class="required-label">必須</span></div>
+              <div class="advance-form__control">
+                <label class="check-control" for="advance-receipt-confirmation">
+                  <input id="advance-receipt-confirmation" name="receipt_confirmation" type="checkbox" required>
+                  <span>同意する</span>
+                </label>
+                <div class="advance-form__help">
+                  <p>※長期シフトの方は月初から5日間は保険関係などの控除のため前払いはできません。</p>
+                  <p>※遅刻、早退当日分、理由の証明できない当日欠勤は前払いできません。</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="advance-form__consent">
+              <p>個人情報の取り扱いについて<a class="hover-underline" href="../privacy/index.html">プライバシーポリシー</a>をご確認頂き、同意の上送信してください。</p>
+              <label class="check-control" for="advance-privacy-consent">
+                <input id="advance-privacy-consent" name="privacy_consent" type="checkbox" required>
+                <span>同意する</span>
+              </label>
+            </div>
+
+            <button class="advance-form__submit hover-fade" type="submit">確認画面へ進む <span aria-hidden="true">→</span></button>
+          </form>
+        </div>
+      </section>
+
+    </div>
   </main>
   <footer class="top-footer">
     <div class="top-footer__inner">
